@@ -18,3 +18,7 @@ variable "email" {
   description = "Email address to send notifications to"
 }
 
+variable "suffix" {
+  default = ""
+  description = "You need this if you have more then one subscription. It will be added as suffix to the cloudformation stack name"
+}

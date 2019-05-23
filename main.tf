@@ -8,11 +8,11 @@ data "template_file" "cloudformation_sns_email_subscription_stack" {
 
 
 resource "aws_cloudformation_stack" "sns_topic_subscription" {
-  name          = "${var.environment}-${var.stack}-topic"
+  name          = "${var.environment}-${var.stack}-topic${var.suffix}"
   template_body = "${data.template_file.cloudformation_sns_email_subscription_stack.rendered}"
 
   tags = {
-    Name        = "${var.environment}-${var.stack}-topic-subscription"
+    Name        = "${var.environment}-${var.stack}-topic-subscription${var.suffix}"
     Stack       = "${var.stack}"
     Environment = "${var.environment}"
     Terraform   = true
