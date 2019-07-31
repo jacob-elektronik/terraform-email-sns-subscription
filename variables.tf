@@ -10,7 +10,7 @@ variable "stack" {
 
 // Configuration
 variable "topic_arn" {
-  type        = "string"
+  type        = string
   description = "Name shown in confirmation emails"
 }
 
@@ -19,6 +19,7 @@ variable "email" {
 }
 
 variable "suffix" {
-  default = ""
+  default     = ""
   description = "You need this if you have more then one subscription. It will be added as suffix to the cloudformation stack name"
 }
+
